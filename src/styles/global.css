@@ -186,6 +186,22 @@ section {
   padding: var(--section-padding);
 }
 
+h1 {
+  /* Text Preset 1 */
+  font-family: "Bellefair", serif;
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--color-primary);
+  /* Text Preset 9 */
+  line-height: 1.8;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
 <~~          Utilities         ~~>
 <~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
@@ -233,6 +249,15 @@ section {
   font-family: "Bellefair", serif;
   font-size: 1.125rem;
   font-weight: 400;
+}
+
+.topper {
+  color: var(--color-primary);
+  /* Text Preset 6 */
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
 }
 
 /* Skip to main content link - accessible to keyboard users and screen readers */
