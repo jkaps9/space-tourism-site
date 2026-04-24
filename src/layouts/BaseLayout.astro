@@ -29,7 +29,7 @@ const { pageTitle, description } = Astro.props;
     >
       Click To Skip To Main Content
     </a>
-    <Header />
+    <Header title={pageTitle} />
     <main id="main">
       <slot />
     </main>

@@ -1,6 +1,7 @@
 ---
 import navData from "../data/navData.json";
 import Logo from "./Logo.astro";
+const { title } = Astro.props;
 ---
 
 <header>
@@ -21,6 +22,7 @@ import Logo from "./Logo.astro";
                 class:list={[
                   "nav-list__item",
                   { "nav-links__dropdown": item.children?.length > 0 },
+                  { active: title === item.key },
                 ]}
               >
                 <a href={item.url}>
@@ -181,14 +183,18 @@ import Logo from "./Logo.astro";
 
   @media (min-width: 48rem) {
     header {
-      padding: 2rem 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
     }
 
     .nav-list {
       background: none;
       display: flex;
       flex-direction: row;
-      gap: 3em;
+      gap: 3rem;
       position: static;
       width: auto;
     }
@@ -197,10 +203,33 @@ import Logo from "./Logo.astro";
       display: none;
     }
 
+    .navbar {
+      align-items: center;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: auto 1fr;
+      padding-left: 2.5rem;
+    }
+
     .nav-list-wrapper {
       align-items: center;
+      backdrop-filter: blur(40px);
+      background: rgba(255, 255, 255, 0.05);
       display: flex;
-      gap: 6em;
+      gap: 3rem;
+      padding-left: 5rem;
+    }
+
+    .nav-list__item {
+      min-height: 6rem;
+
+      &.active {
+        border-bottom: 2px solid #ffffff;
+      }
+
+      a {
+        height: 100%;
+      }
     }
   }
 </style>
