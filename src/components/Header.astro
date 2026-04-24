@@ -28,14 +28,7 @@ import Logo from "./Logo.astro";
             ))
           }
         </ul>
-        <a
-          href="/contact/"
-          class="nav-cta btn btn--solid"
-        >
-          Get Quote
-        </a>
       </div>
-      <!-- <ThemeIcon /> -->
       <button
         aria-expanded="false"
         aria-controls="main-menu"
@@ -105,6 +98,7 @@ import Logo from "./Logo.astro";
     font-size: 1.2rem;
     font-weight: 400;
     text-decoration: none;
+    text-transform: uppercase;
     transition: color 0.3s ease;
 
     &:hover {
@@ -112,7 +106,7 @@ import Logo from "./Logo.astro";
     }
   }
 
-  @media (max-width: 63.9375rem) {
+  @media (max-width: 47.9375rem) {
     body {
       overflow-x: hidden;
     }
@@ -121,39 +115,20 @@ import Logo from "./Logo.astro";
       box-sizing: border-box;
       padding: 0;
       z-index: 10000;
-      &::before {
-        /* black blurred overlay */
-        content: "";
-        backdrop-filter: blur(10px);
-        background: rgba(0, 0, 0, 0.6);
-        display: block;
-        height: 100vh;
-        opacity: 0;
-        position: absolute;
-        right: 0;
-        top: 100%;
-        transition:
-          width 0.5s,
-          opacity 0.3s;
-        width: 0%;
-        z-index: -11;
-      }
     }
     .container {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       padding: 2rem;
       width: 100%;
     }
     .nav-list-wrapper {
-      align-items: center;
-      background-color: #fff;
-      bottom: 0;
+      align-items: flex-start;
+      background: rgba(11, 13, 23, 0.15);
+      backdrop-filter: blur(40px);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      min-height: 100vh;
-      margin-left: 0 auto;
-      padding: 2rem 4rem;
+      gap: 3rem;
+      height: 100vh;
+      padding: 3rem 0 0 2rem;
       position: absolute;
       right: 0;
       top: 100%;
@@ -161,7 +136,7 @@ import Logo from "./Logo.astro";
       transition: transform 0.3s ease-in;
       /* TODO: fix nav not sliding out properly */
       visibility: hidden;
-      width: fit-content;
+      width: 50vw;
       z-index: -1;
     }
 
@@ -177,13 +152,6 @@ import Logo from "./Logo.astro";
 
     body.navbar:has(.nav-toggle[aria-expanded="true"]) {
       overflow: hidden;
-    }
-
-    header:has(.nav-toggle[aria-expanded="true"]) {
-      &::before {
-        opacity: 1;
-        width: 100%;
-      }
     }
 
     .navbar:has(.nav-toggle[aria-expanded="true"]) {
@@ -209,7 +177,6 @@ import Logo from "./Logo.astro";
 
   @media (min-width: 64rem) {
     header {
-      box-shadow: 0 8px 6px -8px rgba(0, 0, 0, 0.1);
       padding: 2rem 0;
     }
 
