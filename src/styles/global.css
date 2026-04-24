@@ -86,13 +86,14 @@ h6 {
 
 :root {
   /* Colors */
-  --color-primary: #aff425;
-  --color-primary-light: #7aa329;
-  --color-secondary: #001f3f;
-  --color-secondary-light: #001f3f;
-  --color-header: #1a1a1a;
-  --color-body-text: #4e4b66;
-  --color-body-text-white: #fafbfc;
+  --color-primary: #D0D6F9;
+  --color-primary-light: #D0D6F9;
+  --color-secondary: #0B0D17;
+  --color-secondary-light: #0B0D17;
+  
+  --color-header: #ffffff;
+  --color-body-text: #ffffff;
+  --color-body-text-white: #ffffff;
 
   --section-padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
@@ -135,7 +136,7 @@ h6 {
 html,
 body {
   color: var(--color-body-text);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Barlow Condensed", Arial, sans-serif;
   font-size: 100%;
 }
 
