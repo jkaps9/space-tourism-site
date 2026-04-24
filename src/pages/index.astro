@@ -4,4 +4,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <section class="hero">
+    <div class="container">
+      <span class="topper">So, you want to travel to</span>
+      <h1>Space</h1>
+      <p>
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+      <a
+        href="/destination/"
+        class="btn btn--solid"
+      >
+        EXPLORE
+      </a>
+    </div>
+  </section>
+</BaseLayout>
