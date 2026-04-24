@@ -1,0 +1,26 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<section class="inner-hero">
+  <div class="container">
+    <h1>{pageTitle}</h1>
+  </div>
+</section>
+
+<style>
+  .inner-hero {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 25vh;
+  }
+
+  @media (min-width: 64rem) {
+    .inner-hero {
+      min-height: 20rem;
+    }
+  }
+</style>

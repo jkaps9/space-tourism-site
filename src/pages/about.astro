@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InnerHero from "@components/InnerHero.astro";
+
+const pageTitle = "About";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <InnerHero pageTitle={pageTitle} />
+</BaseLayout>
