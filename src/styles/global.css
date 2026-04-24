@@ -86,11 +86,11 @@ h6 {
 
 :root {
   /* Colors */
-  --color-primary: #D0D6F9;
-  --color-primary-light: #D0D6F9;
-  --color-secondary: #0B0D17;
-  --color-secondary-light: #0B0D17;
-  
+  --color-primary: #d0d6f9;
+  --color-primary-light: #d0d6f9;
+  --color-secondary: #0b0d17;
+  --color-secondary-light: #0b0d17;
+
   --color-header: #ffffff;
   --color-body-text: #ffffff;
   --color-body-text-white: #ffffff;
@@ -106,27 +106,29 @@ h6 {
 /* bellefair-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Bellefair';
+  font-family: "Bellefair";
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/bellefair-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/bellefair-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* barlow-condensed-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Barlow Condensed';
+  font-family: "Barlow Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/barlow-condensed-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/barlow-condensed-v13-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* barlow-condensed-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Barlow Condensed';
+  font-family: "Barlow Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url('../assets/fonts/barlow-condensed-v13-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/barlow-condensed-v13-latin-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
@@ -202,36 +204,35 @@ section {
 }
 
 .btn {
-  border-radius: 0.5rem;
-  border: 2px solid transparent;
-  color: var(--color-header);
+  align-items: center;
+  border-radius: 999px;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
   display: inline-flex;
   font-size: 1rem;
   font-weight: 700;
-  padding: 0.75em 1.5em;
+  gap: 0.5rem;
+  justify-content: center;
+  height: 144px;
+  width: 144px;
   text-decoration: none;
-  transition:
-    background-color 0.3s ease 0.1s,
-    border-color 0.3s ease 0.1s,
-    color 0.3s ease 0.1s;
 
   &.btn--solid {
-    background-color: var(--color-primary);
-  }
-
-  &.btn--outline {
-    background-color: var(--color-body-text-white);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    &:hover {
-      border-color: var(--color-secondary);
-    }
+    background-color: var(--color-body-text);
   }
 
   &:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-body-text-white);
+    /* TODO: fix hover effect */
+    border: 88px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.5;
   }
+}
+
+.textpreset4 {
+  font-family: "Bellefair", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 /* Skip to main content link - accessible to keyboard users and screen readers */
