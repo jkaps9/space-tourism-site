@@ -11,6 +11,7 @@ const { title } = Astro.props;
       aria-label="main navigation"
     >
       <Logo />
+      <div class="line"></div>
       <div class="nav-list-wrapper">
         <ul
           id="main-menu"
@@ -64,6 +65,10 @@ const { title } = Astro.props;
     .logo {
       margin-right: auto;
     }
+  }
+
+  .line {
+    display: none;
   }
 
   .nav-toggle {
@@ -259,12 +264,30 @@ const { title } = Astro.props;
       align-items: center;
       display: flex;
       gap: 0;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       padding-left: 4rem;
+      .logo {
+        box-sizing: content-box;
+        margin-right: 4rem;
+        svg {
+          min-width: 48px;
+        }
+      }
     }
 
     .nav-list-wrapper {
+      margin-left: auto;
       padding: 0 4rem;
+    }
+
+    .line {
+      background-color: #ffffff;
+      display: block;
+      height: 1px;
+      margin-right: -1rem;
+      opacity: 0.25;
+      width: stretch;
+      z-index: 1;
     }
   }
 </style>
