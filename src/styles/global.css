@@ -199,7 +199,7 @@ p {
   /* Text Preset 9 */
   line-height: 1.8;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 15px;
+  font-size: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
   font-weight: 400;
 }
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
@@ -289,5 +289,13 @@ p {
     font-weight: 700;
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .btn {
+    font-size: 2rem;
+    height: 272px;
+    width: 272px;
   }
 }
