@@ -245,4 +245,26 @@ const { title } = Astro.props;
       }
     }
   }
+
+  @media (min-width: 64rem) {
+    header {
+      padding: 2.5rem 0 0;
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    .navbar {
+      align-items: center;
+      display: flex;
+      gap: 0;
+      justify-content: space-between;
+      padding-left: 4rem;
+    }
+
+    .nav-list-wrapper {
+      padding: 0 4rem;
+    }
+  }
 </style>
