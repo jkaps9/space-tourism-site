@@ -154,6 +154,19 @@ const { title } = Astro.props;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+
+      width: stretch;
+    }
+
+    .nav-list__item {
+      width: stretch;
+      &.active {
+        border-right: 3px solid #ffffff;
+      }
+
+      a {
+        width: stretch;
+      }
     }
 
     body.navbar:has(.nav-toggle[aria-expanded="true"]) {
@@ -224,7 +237,7 @@ const { title } = Astro.props;
       min-height: 6rem;
 
       &.active {
-        border-bottom: 2px solid #ffffff;
+        border-bottom: 3px solid #ffffff;
       }
 
       a {
