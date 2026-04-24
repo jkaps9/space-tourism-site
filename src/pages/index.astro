@@ -48,7 +48,7 @@ const pageTitle = "Home";
     flex-direction: column;
     gap: 1.5rem;
     margin: 0 auto;
-    max-width: 425px;
+    max-width: 428px;
   }
 
   .btn {
@@ -64,6 +64,25 @@ const pageTitle = "Home";
 
     a {
       display: inline-flex;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .container {
+      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1110px;
+      text-align: start;
+    }
+
+    .text {
+      max-width: 100%;
+    }
+
+    .button {
+      align-self: end;
+      justify-self: end;
+      padding-bottom: 2rem;
     }
   }
 </style>

@@ -189,7 +189,7 @@ section {
 h1 {
   /* Text Preset 1 */
   font-family: "Bellefair", serif;
-  font-size: 5rem;
+  font-size: clamp(5rem, 1.1832rem + 16.285vw, 9rem);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -256,8 +256,8 @@ p {
   color: var(--color-primary);
   /* Text Preset 6 */
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 1rem;
-  letter-spacing: 2.4px;
+  font-size: clamp(1rem, 0.2844rem + 3.0534vw, 1.75rem);
+  letter-spacing: clamp(0.15rem, 0.0546rem + 0.4071vw, 0.25rem);
   text-transform: uppercase;
 }
 
