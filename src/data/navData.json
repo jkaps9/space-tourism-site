@@ -5,13 +5,18 @@
     "children": []
   },
   {
-    "key": "About",
-    "url": "/about/",
+    "key": "Destination",
+    "url": "/destination/",
     "children": []
   },
   {
-    "key": "Blog",
-    "url": "/blog/",
+    "key": "Crew",
+    "url": "/crew/",
+    "children": []
+  },
+  {
+    "key": "Technology",
+    "url": "/technology/",
     "children": []
   }
 ]
