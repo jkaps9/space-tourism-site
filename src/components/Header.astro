@@ -24,7 +24,8 @@ import Logo from "./Logo.astro";
                 ]}
               >
                 <a href={item.url}>
-                  <span class="bold">0{index}</span> {item.key}
+                  <span class="bold">0{index}</span>
+                  {item.key}
                 </a>
               </li>
             ))
@@ -96,9 +97,14 @@ import Logo from "./Logo.astro";
   }
 
   .nav-list__item a {
+    align-items: center;
     color: var(--color-header);
-    font-size: 1.2rem;
+    display: flex;
+    font-family: "Barlow Condensed";
+    font-size: 1rem;
     font-weight: 400;
+    gap: 0.75rem;
+    letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -130,15 +136,15 @@ import Logo from "./Logo.astro";
       flex-direction: column;
       gap: 3rem;
       height: 100vh;
-      padding: 3rem 0 0 2rem;
+      padding: 8rem 0 0 2rem;
       position: absolute;
       right: 0;
-      top: 100%;
+      top: 0;
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
       /* TODO: fix nav not sliding out properly */
       visibility: hidden;
-      width: 50vw;
+      width: 66vw;
       z-index: -1;
     }
 
@@ -146,10 +152,6 @@ import Logo from "./Logo.astro";
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-    }
-
-    .nav-list__item a {
-      font-size: 1.6rem;
     }
 
     body.navbar:has(.nav-toggle[aria-expanded="true"]) {

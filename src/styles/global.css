@@ -245,10 +245,11 @@ p {
   }
 }
 
-.textpreset4 {
-  font-family: "Bellefair", serif;
-  font-size: 1.125rem;
-  font-weight: 400;
+.bold {
+  font-weight: 700;
+  letter-spacing: 2.7px;
+  font-family: "Barlow Condensed";
+  font-size: 1rem;
 }
 
 .topper {
@@ -258,6 +259,12 @@ p {
   font-size: 1rem;
   letter-spacing: 2.4px;
   text-transform: uppercase;
+}
+
+.textpreset4 {
+  font-family: "Bellefair", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 /* Skip to main content link - accessible to keyboard users and screen readers */
