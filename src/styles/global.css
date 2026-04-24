@@ -141,6 +141,7 @@ body {
 }
 
 body {
+  background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
