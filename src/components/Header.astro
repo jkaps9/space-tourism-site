@@ -16,14 +16,16 @@ import Logo from "./Logo.astro";
           class="nav-list"
         >
           {
-            navData.map((item) => (
+            navData.map((item, index) => (
               <li
                 class:list={[
                   "nav-list__item",
                   { "nav-links__dropdown": item.children?.length > 0 },
                 ]}
               >
-                <a href={item.url}>{item.key}</a>
+                <a href={item.url}>
+                  <span class="bold">0{index}</span> {item.key}
+                </a>
               </li>
             ))
           }
@@ -175,7 +177,7 @@ import Logo from "./Logo.astro";
     }
   }
 
-  @media (min-width: 64rem) {
+  @media (min-width: 48rem) {
     header {
       padding: 2rem 0;
     }
