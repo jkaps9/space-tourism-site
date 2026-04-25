@@ -6,8 +6,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   //TODO: update me!
-  site: "https://jkaps9.github.io/space-tourism-site",
-
+  site: "https://spaceventures.netlify.app",
   integrations: [],
   adapter: netlify(),
 });
