@@ -1,8 +1,13 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://jkaps9.github.io/space-tourism-site", //TODO: update me!
+  //TODO: update me!
+  site: "https://jkaps9.github.io/space-tourism-site",
+
   integrations: [],
+  adapter: netlify(),
 });
