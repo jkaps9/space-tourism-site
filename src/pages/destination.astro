@@ -202,4 +202,27 @@ const largeImageSrc =
       }
     }
   }
+
+  @media (min-width: 48rem) {
+    .destination__image {
+      min-height: 384px;
+
+      img {
+        height: 300px;
+        width: 300px;
+      }
+    }
+
+    .destination__text {
+      max-width: 512px;
+    }
+
+    .destination__statistics {
+      flex-direction: row;
+      justify-content: center;
+      & > * {
+        flex: 1;
+      }
+    }
+  }
 </style>
