@@ -225,4 +225,47 @@ const largeImageSrc =
       }
     }
   }
+
+  @media (min-width: 64rem) {
+    .destination__image {
+      height: stretch;
+      min-height: 100%;
+      padding: 0 2rem;
+      img {
+        height: 480px;
+        width: 480px;
+      }
+    }
+
+    .destinations {
+      width: stretch;
+    }
+    .destination__content.column {
+      align-self: stretch;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .destination__explanation {
+      align-self: center;
+      align-items: flex-start;
+      flex: 1;
+      gap: 2.5rem;
+      text-align: start;
+      padding: 0 3rem;
+    }
+
+    .destination__detail.column {
+      gap: 2.5rem;
+    }
+    .destination__text {
+      text-align: start;
+
+      max-width: 445px;
+    }
+
+    .destination__statistics {
+      text-align: start;
+    }
+  }
 </style>
