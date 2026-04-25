@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import data from "../data/data.json";
 
 const pageTitle = "Crew";
 const smallImageSrc = "/assets/images/crew/background-crew-mobile.jpg";
@@ -18,6 +19,34 @@ const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
       <h2 class="page-title">
         <span>02</span>MEET YOUR CREW
       </h2>
+      <div
+        class="crew-members"
+        data-current-id="0"
+      >
+        {
+          data.crew.map((item, index) => (
+            <div class="crew-member">
+              <div class="crew-member__content">
+                <p class="crew-member__role">{item.role}</p>
+                <h1>{item.name}</h1>
+                <p class="crew-member__bio">{item.bio}</p>
+              </div>
+              <div class="crew-member__image">
+                <picture>
+                  <source
+                    srcset={item.images.webp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={item.images.png}
+                    alt={item.name}
+                  />
+                </picture>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
