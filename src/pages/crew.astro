@@ -2,6 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Crew";
+const smallImageSrc = "/src/assets/images/background-home-mobile.jpg";
+const mediumImageSrc = "/src/assets/images/background-home-tablet.jpg";
+const largeImageSrc = "/src/assets/images/background-home-desktop.jpg";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout
+  pageTitle={pageTitle}
+  smallImageSrc={smallImageSrc}
+  mediumImageSrc={mediumImageSrc}
+  largeImageSrc={largeImageSrc}
+>
+  <section class="destination">
+    <div class="container"></div>
+  </section>
+</BaseLayout>
