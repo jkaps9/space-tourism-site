@@ -3,7 +3,8 @@ import Header from "../components/Header.astro";
 
 import "../styles/global.css";
 import Meta from "@components/Meta.astro";
-const { pageTitle, description } = Astro.props;
+const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -29,6 +30,22 @@ const { pageTitle, description } = Astro.props;
     >
       Click To Skip To Main Content
     </a>
+    <div class="body-background">
+      <picture>
+        <source
+          media="(min-width: 64rem)"
+          srcset={largeImageSrc}
+        />
+        <source
+          media="(min-width: 64rem)"
+          srcset={mediumImageSrc}
+        />
+        <img
+          src={smallImageSrc}
+          alt="space scene"
+        />
+      </picture>
+    </div>
     <Header title={pageTitle} />
     <main id="main">
       <slot />
@@ -39,3 +56,27 @@ const { pageTitle, description } = Astro.props;
     </script>
   </body>
 </html>
+
+<style>
+  .body-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    bottom: 0;
+    img {
+      width: auto;
+      height: 100vh;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .body-background {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+</style>
