@@ -103,7 +103,7 @@ const pages = Array(4).fill(null);
 
   h1 {
     font-family: "Bellefair" serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
     font-weight: 400;
   }
 
@@ -125,7 +125,7 @@ const pages = Array(4).fill(null);
   }
 
   .crew-member__image {
-    height: 352px;
+    height: clamp(22rem, 15.3802rem + 28.2443vw, 28.9375rem);
     padding: 0 1.5rem;
     place-content: center;
   }
@@ -148,6 +148,36 @@ const pages = Array(4).fill(null);
 
     &.active {
       opacity: 1;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .crew-member__content {
+      max-width: 66vw;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .crew-member:not(.hidden) {
+      align-items: end;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .crew-member__content {
+      align-items: flex-start;
+      text-align: start;
+    }
+    .pagination {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .page {
+      height: 15px;
+      width: 15px;
+    }
+    .crew-member__image {
+      grid-row: 1 / span 2;
     }
   }
 </style>
