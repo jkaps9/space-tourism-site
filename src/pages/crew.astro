@@ -25,7 +25,10 @@ const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
       >
         {
           data.crew.map((item, index) => (
-            <div class="crew-member">
+            <div
+              class:list={["crew-member", { hidden: index !== 0 }]}
+              data-id={index}
+            >
               <div class="crew-member__content">
                 <p class="crew-member__role">{item.role}</p>
                 <h1>{item.name}</h1>
@@ -50,3 +53,9 @@ const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
