@@ -103,6 +103,16 @@ const { title } = Astro.props;
     padding: 0;
   }
 
+  .nav-list__item {
+    border-right: 3px solid transparent;
+    &.active {
+      border-color: #ffffff;
+    }
+
+    &:not(.active):hover {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
   .nav-list__item a {
     align-items: center;
     color: var(--color-header);
@@ -165,9 +175,6 @@ const { title } = Astro.props;
 
     .nav-list__item {
       width: stretch;
-      &.active {
-        border-right: 3px solid #ffffff;
-      }
 
       a {
         width: stretch;
@@ -240,10 +247,8 @@ const { title } = Astro.props;
 
     .nav-list__item {
       min-height: 6rem;
-
-      &.active {
-        border-bottom: 3px solid #ffffff;
-      }
+      border-right: none;
+      border-bottom: 3px solid transparent;
 
       a {
         height: 100%;
@@ -257,7 +262,7 @@ const { title } = Astro.props;
     }
 
     .container {
-      max-width: 100%;
+      max-width: 1440px;
     }
 
     .navbar {
