@@ -22,13 +22,16 @@ const largeImageSrc =
       <h2 class="page-title">
         <span>01</span>PICK YOUR DESTINATION
       </h2>
-      <div class="destinations">
+      <div
+        class="destinations"
+        data-current-id="0"
+      >
         <div class="destination__content">
           <div class="destination__images">
             {
               data.destinations.map((item, index) => (
                 <div
-                  class="destination__image"
+                  class:list={["destination__image", { hidden: index !== 0 }]}
                   data-id={index}
                 >
                   <picture>
@@ -49,7 +52,12 @@ const largeImageSrc =
             <div class="destination__tab">
               {
                 data.destinations.map((item, index) => (
-                  <button data-id={index}>{item.name}</button>
+                  <button
+                    class:list={[{ active: index === 0 }]}
+                    data-id={index}
+                  >
+                    {item.name}
+                  </button>
                 ))
               }
             </div>
@@ -57,7 +65,10 @@ const largeImageSrc =
               {
                 data.destinations.map((item, index) => (
                   <div
-                    class="destination__detail"
+                    class:list={[
+                      "destination__detail",
+                      { hidden: index !== 0 },
+                    ]}
                     data-id={index}
                   >
                     <div class="destination__text">
@@ -85,3 +96,9 @@ const largeImageSrc =
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
