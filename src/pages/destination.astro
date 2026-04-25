@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import data from "../data/data.json";
 
 const pageTitle = "Destination";
-const smallImageSrc = "/src/assets/images/background-home-mobile.jpg";
-const mediumImageSrc = "/src/assets/images/background-home-tablet.jpg";
-const largeImageSrc = "/src/assets/images/background-home-desktop.jpg";
+const smallImageSrc =
+  "/src/assets/images/destination/background-destination-mobile.jpg";
+const mediumImageSrc =
+  "/src/assets/images/destination/background-destination-tablet.jpg";
+const largeImageSrc =
+  "/src/assets/images/destination/background-destination-desktop.jpg";
 ---
 
 <BaseLayout
@@ -14,6 +18,10 @@ const largeImageSrc = "/src/assets/images/background-home-desktop.jpg";
   largeImageSrc={largeImageSrc}
 >
   <section class="destination">
-    <div class="container"></div>
+    <div class="container">
+      <h2 class="page-title">
+        <span>01</span>PICK YOUR DESTINATION
+      </h2>
+    </div>
   </section>
 </BaseLayout>

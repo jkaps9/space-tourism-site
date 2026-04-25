@@ -195,6 +195,14 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  /* Text Preset 5 */
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: clamp(0.15rem, 0.1148rem + 0.1502vw, 0.25rem);
+}
+
 p {
   color: var(--color-primary);
   /* Text Preset 9 */
@@ -247,7 +255,7 @@ p {
 .bold {
   font-weight: 700;
   letter-spacing: 2.7px;
-  font-family: "Barlow Condensed";
+  font-family: "Barlow Condensed", sans-serif;
   font-size: 1rem;
 }
 
@@ -266,6 +274,16 @@ p {
   font-weight: 400;
 }
 
+.page-title {
+  display: flex;
+  gap: 1.5rem;
+
+  span {
+    font-weight: 700;
+    letter-spacing: clamp(0.15rem, 0.0988rem + 0.2183vw, 0.2953rem);
+    opacity: 0.25;
+  }
+}
 /* Skip to main content link - accessible to keyboard users and screen readers */
 .skip {
   position: absolute;
