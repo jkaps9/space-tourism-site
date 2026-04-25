@@ -163,6 +163,7 @@ h4,
 h5,
 h6 {
   color: var(--color-header);
+  text-transform: uppercase;
 }
 
 p,
@@ -192,7 +193,6 @@ h1 {
   font-family: "Bellefair", serif;
   font-size: clamp(5rem, 1.1832rem + 16.285vw, 9rem);
   font-weight: 400;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -203,6 +203,12 @@ h2 {
   letter-spacing: clamp(0.15rem, 0.1148rem + 0.1502vw, 0.25rem);
 }
 
+h3 {
+  /* Text Preset 6 */
+  font-family: "Bellefair", serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
 p {
   color: var(--color-primary);
   /* Text Preset 9 */
@@ -272,6 +278,12 @@ p {
   font-family: "Bellefair", serif;
   font-size: 1.125rem;
   font-weight: 400;
+}
+
+.textpreset7 {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .page-title {

@@ -22,6 +22,66 @@ const largeImageSrc =
       <h2 class="page-title">
         <span>01</span>PICK YOUR DESTINATION
       </h2>
+      <div class="destinations">
+        <div class="destination__content">
+          <div class="destination__images">
+            {
+              data.destinations.map((item, index) => (
+                <div
+                  class="destination__image"
+                  data-id={index}
+                >
+                  <picture>
+                    <source
+                      srcset={item.images.webp}
+                      type="image/webp"
+                    />
+                    <img
+                      src={item.images.png}
+                      alt={item.name}
+                    />
+                  </picture>
+                </div>
+              ))
+            }
+          </div>
+          <div class="destination__explanation">
+            <div class="destination__tab">
+              {
+                data.destinations.map((item, index) => (
+                  <button data-id={index}>{item.name}</button>
+                ))
+              }
+            </div>
+            <div class="destination__details">
+              {
+                data.destinations.map((item, index) => (
+                  <div
+                    class="destination__detail"
+                    data-id={index}
+                  >
+                    <div class="destination__text">
+                      <h1>{item.name}</h1>
+                      <p>{item.description}</p>
+                    </div>
+                    <div class="divider" />
+                    <div class="destination__statistics">
+                      <div class="statistics__item">
+                        <p class="textpreset7">Avg. distance</p>
+                        <h3>{item.distance}</h3>
+                      </div>
+                      <div class="statistics__item">
+                        <p class="textpreset7">Est. travel time</p>
+                        <h3>{item.travel}</h3>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
