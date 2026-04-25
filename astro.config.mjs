@@ -7,5 +7,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   //TODO: update me!
   integrations: [],
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: true,
+  }),
 });
