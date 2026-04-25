@@ -223,7 +223,7 @@ p {
 
 .container {
   width: 90%;
-  margin: auto; /* TODO: revisit if i like this*/
+  margin: 0 auto;
   max-width: 1200px;
   position: relative;
 }
