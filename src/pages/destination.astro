@@ -26,7 +26,7 @@ const largeImageSrc =
         class="destinations"
         data-current-id="0"
       >
-        <div class="destination__content">
+        <div class="destination__content column">
           <div class="destination__images">
             {
               data.destinations.map((item, index) => (
@@ -48,7 +48,7 @@ const largeImageSrc =
               ))
             }
           </div>
-          <div class="destination__explanation">
+          <div class="destination__explanation column">
             <div class="destination__tab">
               {
                 data.destinations.map((item, index) => (
@@ -67,21 +67,22 @@ const largeImageSrc =
                   <div
                     class:list={[
                       "destination__detail",
+                      "column",
                       { hidden: index !== 0 },
                     ]}
                     data-id={index}
                   >
-                    <div class="destination__text">
+                    <div class="destination__text column">
                       <h1>{item.name}</h1>
                       <p>{item.description}</p>
                     </div>
                     <div class="divider" />
                     <div class="destination__statistics">
-                      <div class="statistics__item">
+                      <div class="statistics__item column">
                         <p class="textpreset7">Avg. distance</p>
                         <h3>{item.distance}</h3>
                       </div>
-                      <div class="statistics__item">
+                      <div class="statistics__item column">
                         <p class="textpreset7">Est. travel time</p>
                         <h3>{item.travel}</h3>
                       </div>
@@ -98,7 +99,69 @@ const largeImageSrc =
 </BaseLayout>
 
 <style>
+  .destination {
+    display: flex;
+    flex: 1;
+  }
   .hidden {
     display: none;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .destination__image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .destinations {
+    flex: 1;
+    display: flex;
+  }
+
+  .destination__content {
+    align-self: stretch;
+    flex: 1;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .destination__details {
+    display: flex;
+    flex: 1;
+  }
+
+  .destination__explanation,
+  .destination__detail:not(.hidden) {
+    align-self: stretch;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .destination__text {
+    align-self: stretch;
+    flex: 1;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .destination__statistics {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .statistics__item {
+    align-self: stretch;
+    gap: 0.75rem;
   }
 </style>

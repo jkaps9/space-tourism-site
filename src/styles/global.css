@@ -234,6 +234,11 @@ p {
   justify-content: space-between;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   align-items: center;
   border-radius: 999px;
@@ -272,6 +277,13 @@ p {
   font-size: clamp(1rem, 0.2844rem + 3.0534vw, 1.75rem);
   letter-spacing: clamp(0.15rem, 0.0546rem + 0.4071vw, 0.25rem);
   text-transform: uppercase;
+}
+
+.divider {
+  align-self: stretch;
+  background-color: #ffffff;
+  height: 1px;
+  opacity: 0.25;
 }
 
 .textpreset4 {
