@@ -130,13 +130,13 @@ const largeImageSrc =
   }
 
   .destination__image {
-    min-height: 200px;
+    min-height: 60vw;
     place-content: center;
 
     img {
-      height: 150px;
+      height: 40vw;
       margin: 0 auto;
-      width: 150px;
+      width: 40vw;
     }
   }
 
@@ -204,15 +204,6 @@ const largeImageSrc =
   }
 
   @media (min-width: 48rem) {
-    .destination__image {
-      min-height: 384px;
-
-      img {
-        height: 300px;
-        width: 300px;
-      }
-    }
-
     .destination__text {
       p {
         max-width: 512px;
@@ -233,9 +224,10 @@ const largeImageSrc =
       height: stretch;
       min-height: 100%;
       padding: 0 2rem;
+      width: 100%;
       img {
-        height: 480px;
-        width: 480px;
+        height: auto;
+        width: 100%;
       }
     }
 
