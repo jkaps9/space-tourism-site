@@ -6,6 +6,8 @@ const pageTitle = "Crew";
 const smallImageSrc = "/assets/images/crew/background-crew-mobile.jpg";
 const mediumImageSrc = "/assets/images/crew/background-crew-tablet.jpg";
 const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
+
+const pages = Array(4).fill(null);
 ---
 
 <BaseLayout
@@ -29,10 +31,20 @@ const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
               class:list={["crew-member", { hidden: index !== 0 }]}
               data-id={index}
             >
-              <div class="crew-member__content">
-                <p class="crew-member__role">{item.role}</p>
-                <h1>{item.name}</h1>
+              <div class="crew-member__content column">
+                <div class="rank-and-name column">
+                  <p class="crew-member__role textpreset4">{item.role}</p>
+                  <h1>{item.name}</h1>
+                </div>
                 <p class="crew-member__bio">{item.bio}</p>
+              </div>
+              <div class="pagination">
+                {pages.map((_, pgIndex) => (
+                  <button
+                    class:list={["page", { active: index === pgIndex }]}
+                    data-id={pgIndex}
+                  />
+                ))}
               </div>
               <div class="crew-member__image">
                 <picture>
@@ -57,5 +69,76 @@ const largeImageSrc = "/assets/images/crew/background-crew-desktop.jpg";
 <style>
   .hidden {
     display: none;
+  }
+
+  .crew {
+    display: flex;
+    flex: 1;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .crew-members {
+    display: flex;
+    flex: 1;
+  }
+
+  .crew-member:not(.hidden) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: "Bellefair" serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .crew-member__role {
+    color: var(--color-body-text);
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  .crew-member__content {
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .rank-and-name {
+    gap: 0.5rem;
+  }
+
+  .crew-member__image {
+    padding: 0 1.5rem;
+  }
+
+  .pagination {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .page {
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 100vh;
+    background-color: #ffffff;
+    height: 10px;
+    opacity: 0.2;
+    width: 10px;
+
+    &.active {
+      opacity: 1;
+    }
   }
 </style>
