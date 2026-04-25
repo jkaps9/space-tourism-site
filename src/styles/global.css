@@ -131,6 +131,15 @@ h6 {
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* barlow-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/barlow-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
 <~~         Base Styles        ~~>
 <~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
@@ -213,7 +222,7 @@ p {
   color: var(--color-primary);
   /* Text Preset 9 */
   line-height: 1.8;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
   font-weight: 400;
 }

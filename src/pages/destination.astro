@@ -103,6 +103,13 @@ const largeImageSrc =
 </script>
 
 <style>
+  h1 {
+    /* Text preset 2 */
+    font-family: "Bellefair", serif;
+    font-size: clamp(3.5rem, 2.6197rem + 3.7559vw, 6rem);
+    font-weight: 400;
+  }
+
   .destination {
     display: flex;
     flex: 1;
@@ -219,11 +226,11 @@ const largeImageSrc =
     }
   }
 
-  @media (min-width: 64rem) {
+  @media (min-width: 72rem) {
     .destination__image {
       height: stretch;
       min-height: 100%;
-      padding: 0 2rem;
+      padding: 0 min(2.2vw, 2rem);
       width: 100%;
       img {
         height: auto;
@@ -235,15 +242,14 @@ const largeImageSrc =
       width: stretch;
     }
     .destination__content.column {
-      align-self: stretch;
       align-items: center;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .destination__explanation {
       align-self: center;
       align-items: flex-start;
-      flex: 1;
       gap: 2.5rem;
       text-align: start;
       padding: 0 3rem;
