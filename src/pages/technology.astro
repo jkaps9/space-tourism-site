@@ -235,7 +235,12 @@ const largeImageSrc =
       margin-left: 4rem;
       padding-top: 0;
       text-align: start;
-      width: calc(100vw - 1440px);
+    }
+  }
+
+  @media (min-width: 90rem) {
+    .technology__content {
+      width: max(calc(100vw - 1440px), 580px);
       p {
         max-width: 50ch;
       }
