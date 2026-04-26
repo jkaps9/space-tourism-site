@@ -29,7 +29,10 @@ const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
       Click To Skip To Main Content
     </a>
 
-    <picture class="body-background">
+    <picture
+      aria-hidden="true"
+      class="body-background"
+    >
       <source
         media="(min-width: 64rem)"
         srcset={largeImageSrc}
