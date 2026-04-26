@@ -26,29 +26,31 @@ const largeImageSrc =
         class="technologies"
         data-current-id="0"
       >
-        {
-          data.technology.map((item, index) => (
-            <div
-              class:list={["technology__image", { hidden: index !== 0 }]}
-              data-id={index}
-            >
-              <picture>
-                <source
-                  media="(min-width: 64rem)"
-                  srcset={item.images.portrait}
-                />
-                <source
-                  media="(min-width: 48rem)"
-                  srcset={item.images.landscape}
-                />
-                <img
-                  src={item.images.portrait}
-                  alt="space scene"
-                />
-              </picture>
-            </div>
-          ))
-        }
+        <div class="technology__images">
+          {
+            data.technology.map((item, index) => (
+              <div
+                class:list={["technology__image", { hidden: index !== 0 }]}
+                data-id={index}
+              >
+                <picture>
+                  <source
+                    media="(min-width: 64rem)"
+                    srcset={item.images.portrait}
+                  />
+                  <source
+                    media="(min-width: 48rem)"
+                    srcset={item.images.landscape}
+                  />
+                  <img
+                    src={item.images.portrait}
+                    alt="space scene"
+                  />
+                </picture>
+              </div>
+            ))
+          }
+        </div>
         <div class="pagination">
           <button
             class="page textpreset4 active"
@@ -69,24 +71,28 @@ const largeImageSrc =
             3
           </button>
         </div>
-        {
-          data.technology.map((item, index) => (
-            <div
-              class:list={[
-                "technology__content",
-                "column",
-                { hidden: index !== 0 },
-              ]}
-              data-id={index}
-            >
-              <div class="rank-and-name column">
-                <p class="technology__topper textpreset4">The Terminology...</p>
-                <h1>{item.name}</h1>
+        <div class="technology__contents">
+          {
+            data.technology.map((item, index) => (
+              <div
+                class:list={[
+                  "technology__content",
+                  "column",
+                  { hidden: index !== 0 },
+                ]}
+                data-id={index}
+              >
+                <div class="rank-and-name column">
+                  <p class="technology__topper textpreset4">
+                    The Terminology...
+                  </p>
+                  <h1>{item.name}</h1>
+                </div>
+                <p class="technology__description">{item.description}</p>
               </div>
-              <p class="technology__description">{item.description}</p>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -146,9 +152,9 @@ const largeImageSrc =
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 100vh;
     color: var(--body-text-color);
-    height: 40px;
+    height: clamp(2.5rem, 1.6197rem + 3.7559vw, 5rem);
     padding: 0;
-    width: 40px;
+    width: clamp(2.5rem, 1.6197rem + 3.7559vw, 5rem);
 
     &.active {
       background: #ffffff;
@@ -183,6 +189,53 @@ const largeImageSrc =
   @media (min-width: 48rem) {
     .technology__content {
       max-width: 66vw;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .technologies {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      margin-right: calc(-50vw + 50%);
+    }
+
+    .pagination {
+      flex-direction: column;
+      grid-column: 1 / span 1;
+      grid-row: 1;
+    }
+
+    .technology__contents {
+      grid-column: 2 / span 1;
+      grid-row: 1;
+    }
+
+    .technology__images {
+      grid-column: 3 / span 1;
+      grid-row: 1;
+    }
+
+    .technology__image {
+      align-self: flex-start;
+      left: auto;
+      margin-left: 0;
+      margin-right: 0;
+      place-content: end;
+      position: relative;
+      right: auto;
+      width: auto;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .technology__content {
+      align-items: start;
+      margin-left: 4rem;
+      padding-top: 0;
+      text-align: start;
     }
   }
 </style>

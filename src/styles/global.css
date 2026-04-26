@@ -297,7 +297,7 @@ p {
 
 .textpreset4 {
   font-family: "Bellefair", serif;
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.8169rem + 1.3146vw, 2rem);
   font-weight: 400;
 }
 
