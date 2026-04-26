@@ -18,9 +18,9 @@ if (currentIndex && tabButtons) {
 function loopButtons() {
     tabButtons.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "page active";
+            button.classList.add('active');
         } else {
-            button.classList = "page";
+            button.classList.remove('active');
         }
     })
 }
@@ -28,9 +28,9 @@ function loopButtons() {
 function loopList() {
     crewList.querySelectorAll(".crew-member")?.forEach((crewMember) => {
         if (crewMember.getAttribute('data-id') === currentIndex) {
-            crewMember.classList = "crew-member";
+            crewMember.classList.remove('hidden');
         } else {
-            crewMember.classList = "crew-member hidden";
+            crewMember.classList.add('hidden');
         }
     })
 }

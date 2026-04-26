@@ -36,13 +36,27 @@ const { title } = Astro.props;
         </ul>
       </div>
       <button
-        aria-expanded="false"
         aria-controls="main-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
         class="nav-toggle"
+        type="button"
       >
-        <span class="line1"></span>
-        <span class="line2"></span>
-        <span class="line3"></span>
+        <span
+          aria-hidden="true"
+          class="line1"
+        >
+        </span>
+        <span
+          aria-hidden="true"
+          class="line2"
+        >
+        </span>
+        <span
+          aria-hidden="true"
+          class="line3"
+        >
+        </span>
       </button>
     </nav>
   </div>

@@ -20,9 +20,9 @@ if (currentIndex) {
 function loopButtons() {
     tabButtons.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "active";
+            button.classList.add('active');
         } else {
-            button.classList = "";
+            button.classList.remove('active');
         }
     })
 }
@@ -30,9 +30,9 @@ function loopButtons() {
 function loopImages() {
     images.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "destination__image";
+            button.classList.remove('hidden');
         } else {
-            button.classList = "destination__image hidden";
+            button.classList.add('hidden');
         }
     })
 }
@@ -40,9 +40,9 @@ function loopImages() {
 function loopDetails() {
     destinationDetails.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "destination__detail column";
+            button.classList.remove('hidden');;
         } else {
-            button.classList = "destination__detail hidden";
+            button.classList.add('hidden');
         }
     })
 }

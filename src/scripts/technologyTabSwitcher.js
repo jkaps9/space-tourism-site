@@ -21,9 +21,9 @@ if (currentIndex && tabButtons) {
 function loopButtons() {
     tabButtons.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "page textpreset4 active";
+            button.classList.add('active');
         } else {
-            button.classList = "page textpreset4";
+            button.classList.remove('active');
         }
     })
 }
@@ -31,9 +31,9 @@ function loopButtons() {
 function loopList() {
     technologyList.querySelectorAll(".technology__content")?.forEach((technologyMember) => {
         if (technologyMember.getAttribute('data-id') === currentIndex) {
-            technologyMember.classList = "technology__content";
+            technologyMember.classList.remove('hidden');
         } else {
-            technologyMember.classList = "technology__content hidden";
+            technologyMember.classList.add('hidden');
         }
     })
 }
@@ -42,9 +42,9 @@ function loopList() {
 function loopImages() {
     images.forEach((button) => {
         if (button.getAttribute('data-id') === currentIndex) {
-            button.classList = "technology__image";
+            button.classList.remove('hidden');
         } else {
-            button.classList = "technology__image hidden";
+            button.classList.add('hidden');
         }
     })
 }
