@@ -30,22 +30,23 @@ const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
     >
       Click To Skip To Main Content
     </a>
-    <div class="body-background">
-      <picture>
-        <source
-          media="(min-width: 64rem)"
-          srcset={largeImageSrc}
-        />
-        <source
-          media="(min-width: 64rem)"
-          srcset={mediumImageSrc}
-        />
-        <img
-          src={smallImageSrc}
-          alt="space scene"
-        />
-      </picture>
-    </div>
+
+    <picture class="body-background">
+      <source
+        media="(min-width: 64rem)"
+        srcset={largeImageSrc}
+      />
+      <source
+        media="(min-width: 64rem)"
+        srcset={mediumImageSrc}
+      />
+      <img
+        src={smallImageSrc}
+        alt="space scene"
+        class="bg-img"
+      />
+    </picture>
+
     <Header title={pageTitle} />
     <main id="main">
       <slot />
@@ -59,24 +60,18 @@ const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
 
 <style>
   .body-background {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: block;
+    height: 100vh;
     left: 0;
-    overflow: hidden;
-    bottom: 0;
-    img {
-      width: auto;
-      height: 100vh;
-    }
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
   }
-
-  @media (min-width: 48rem) {
-    .body-background {
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
+  .bg-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
   }
 </style>
