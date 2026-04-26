@@ -9,8 +9,6 @@ const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-
     <Meta
       title={pageTitle}
       description={description}
@@ -37,7 +35,7 @@ const { pageTitle, description, largeImageSrc, mediumImageSrc, smallImageSrc } =
         srcset={largeImageSrc}
       />
       <source
-        media="(min-width: 64rem)"
+        media="(min-width: 48rem)"
         srcset={mediumImageSrc}
       />
       <img
