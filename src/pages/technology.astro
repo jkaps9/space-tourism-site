@@ -181,16 +181,17 @@ const largeImageSrc =
   .technology__image {
     align-self: flex-start;
     left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
     place-content: end;
     position: relative;
-    right: 50%;
+    transform: translateX(-50%);
     width: 100vw;
 
     img {
+      display: block;
+      height: auto;
       object-fit: cover;
       object-position: center;
+      width: 100%;
     }
   }
 
@@ -203,7 +204,7 @@ const largeImageSrc =
   @media (min-width: 64rem) {
     .technologies {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr 1fr;
       margin-right: calc(-50vw + 50%);
     }
 
@@ -224,19 +225,9 @@ const largeImageSrc =
     }
 
     .technology__image {
-      align-self: flex-start;
       left: auto;
-      margin-left: 0;
-      margin-right: 0;
-      place-content: end;
-      position: relative;
-      right: auto;
+      transform: translateX(0);
       width: auto;
-
-      img {
-        object-fit: cover;
-        object-position: center;
-      }
     }
 
     .technology__content {
@@ -244,6 +235,10 @@ const largeImageSrc =
       margin-left: 4rem;
       padding-top: 0;
       text-align: start;
+      width: calc(100vw - 1440px);
+      p {
+        max-width: 50ch;
+      }
     }
   }
 </style>
