@@ -35,6 +35,10 @@ const largeImageSrc =
               <picture>
                 <source
                   media="(min-width: 64rem)"
+                  srcset={item.images.portrait}
+                />
+                <source
+                  media="(min-width: 48rem)"
                   srcset={item.images.landscape}
                 />
                 <img
@@ -173,6 +177,12 @@ const largeImageSrc =
     img {
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .technology__content {
+      max-width: 66vw;
     }
   }
 </style>
