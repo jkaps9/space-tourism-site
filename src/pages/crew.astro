@@ -149,6 +149,10 @@ const pages = Array(4).fill(null);
     &.active {
       opacity: 1;
     }
+
+    &:not(.active):hover {
+      opacity: 0.5;
+    }
   }
 
   @media (min-width: 48rem) {

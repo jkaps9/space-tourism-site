@@ -189,7 +189,7 @@ const largeImageSrc =
       background: none;
       border: none;
       border-bottom: 3px solid transparent;
-      color: inherit;
+      color: var(--color-primary);
       padding: 0;
       padding-bottom: 1rem;
       text-transform: uppercase;
@@ -202,10 +202,12 @@ const largeImageSrc =
 
       &.active {
         border-color: #ffffff;
+        color: var(--color-body-text);
       }
 
       &:not(.active):hover {
         border-color: rgba(255, 255, 255, 0.5);
+        color: var(--color-body-text);
       }
     }
   }
