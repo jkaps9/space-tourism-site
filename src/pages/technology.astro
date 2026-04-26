@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import data from "../data/data.json";
 
 const pageTitle = "Technology";
 const smallImageSrc =
@@ -21,6 +22,157 @@ const largeImageSrc =
       <h2 class="page-title">
         <span>03</span>SPACE LAUNCH 101
       </h2>
+      <div
+        class="technologies"
+        data-current-id="0"
+      >
+        {
+          data.technology.map((item, index) => (
+            <div
+              class:list={["technology__image", { hidden: index !== 0 }]}
+              data-id={index}
+            >
+              <picture>
+                <source
+                  media="(min-width: 64rem)"
+                  srcset={item.images.landscape}
+                />
+                <img
+                  src={item.images.portrait}
+                  alt="space scene"
+                />
+              </picture>
+            </div>
+          ))
+        }
+        <div class="pagination">
+          <button
+            class="page textpreset4 active"
+            data-id="0"
+          >
+            1
+          </button>
+          <button
+            class="page textpreset4"
+            data-id="1"
+          >
+            2
+          </button>
+          <button
+            class="page textpreset4"
+            data-id="2"
+          >
+            3
+          </button>
+        </div>
+        {
+          data.technology.map((item, index) => (
+            <div
+              class:list={[
+                "technology__content",
+                "column",
+                { hidden: index !== 0 },
+              ]}
+              data-id={index}
+            >
+              <div class="rank-and-name column">
+                <p class="technology__topper textpreset4">The Terminology...</p>
+                <h1>{item.name}</h1>
+              </div>
+              <p class="technology__description">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  h1 {
+    font-family: "Bellefair" serif;
+    font-size: clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
+    font-weight: 400;
+  }
+
+  .technology {
+    flex: 1;
+    display: flex;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: stretch;
+  }
+
+  .technology__topper {
+    color: var(--color-body-text);
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  .technology__content {
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+
+  .rank-and-name {
+    gap: 0.5rem;
+  }
+
+  .pagination {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .page {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 100vh;
+    color: var(--body-text-color);
+    height: 40px;
+    padding: 0;
+    width: 40px;
+
+    &.active {
+      background: #ffffff;
+      color: var(--color-secondary);
+    }
+  }
+
+  .technologies {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .technology__image {
+    align-self: flex-start;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    place-content: end;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+</style>
